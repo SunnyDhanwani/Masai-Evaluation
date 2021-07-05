@@ -1,0 +1,222 @@
+/*
+Coding Evaluation 05-07-21
+https://learn.masaischool.com/app/assignment/3239/2735
+*/
+
+/*
+1. Build a webpage which looks similar to the layout provided below layout.html
+2. Use of inline styles for any of the html tags is not allowed
+3. All the css styles should be in a separate file style.css
+4. Use Placeholder images whenever required https://placeholder.com/
+5. The css should have atleast one usage of the all the selectors id class type
+6. The css should have atleast two usage of any of the four combinators + ~ > <space>
+7. Use multiple classes to reuse the class
+8. Write clean code with proper naming and indentation
+9. Use Floats & Clear or Flex to create Scholarship Items
+10. Use Grid Layout to create the Program Items
+11. Use Media queries to make sure the look of the page is good in all screen sizes
+12. The count of program items per row (3-Large Screen, 2-Medium Screen, 1-Small Screen)
+*/
+
+body {
+    /*background-color: bisque;*/
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#main-container {
+    width: 80%;
+    /*background-color: cadetblue;*/
+    margin: auto;
+    padding: 10px;
+}
+
+/* Top section CSS*/
+#top-section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /*background-color: yellow;*/
+    background-color: #F8F9FE;
+    margin: 0px auto;
+    width: 86%;
+    padding: 20px 50px 50px 50px;
+}
+
+.scholarship-items {
+    /*width: 250px;*/
+    min-width: 250px;
+    max-width: 300px;
+    background-color: coral;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px 10px;
+    display: flex;
+}
+
+.scholarship-items > img {
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+    margin-top: 10px;
+}
+
+.scholarship-items > .scholarship-details {
+    /*background-color: crimson;*/
+    padding: 20px;
+}
+
+.scholarship-details > .scholarship-name {
+    font-size: 18px;
+    margin: 0px;
+}
+
+.scholarship-name + div {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.yellow-box {
+    background-color: #F1C317;
+}
+
+.blue-box {
+    background-color: #355ED8;
+}
+
+.teal-box {
+    background-color: #00C4DC;
+}
+
+/* Middle Section CSS*/
+#middle-section {
+    text-align: center;
+}
+
+.section-title {
+    font-size: 40px;
+    font-weight: bold;
+    color: #1F3B63;
+    margin-bottom: 15px;
+}
+
+.program-options {
+    width: 80%;
+    margin: auto;
+    /*background-color: violet;*/
+}
+
+.program-options p {
+    display: inline-block;
+    width: 200px;
+    background-color: #F8F9FE;
+    padding: 10px;
+    margin-left: -10px;
+    margin-right: 0px;
+}
+
+.program-options p:nth-of-type(1) {
+    background-color: #00C4DC;
+    color: white;
+}
+
+.program-options p:hover {
+    background-color: #00C4DC;
+    color: white;
+}
+
+/* Bottom section*/
+#bottom-section {
+    display: grid;
+    grid-template: "a b c";
+    padding: 50px;
+    margin: auto;    
+}
+
+.item-carousel {
+    width: 300px;
+    background-color: #F8F9FE;
+    border-radius: 10px;
+    margin: 10px auto;
+}
+
+.item-carousel img {
+    width: 300px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.item-carousel-card-title {
+    padding: 20px;
+}
+
+.item-carousel-card-title p:nth-of-type(2) {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.item-carousel-card-title p:nth-of-type(3) {
+    color: #8FA0DA;
+}
+
+.apply-btn {
+    padding: 12px 10px;
+    background-color: white;
+    color: #00C4DC;
+    border: 2px solid #00C4DC;
+    border-radius: 5px;
+    width: 50%;
+    text-align: center;
+}
+
+.apply-btn:hover {
+    color: white;
+    background-color: #00C4DC;
+}
+
+.chem-card {
+    grid-area: a;
+}
+
+.mech-card {
+    grid-area: b;
+}
+
+.bio-card {
+    grid-area: c;
+}
+
+
+/*
+Media Queries
+*/
+
+/*Medium Screen*/
+@media only screen and (max-width: 1000px) and (min-width: 700px) {
+
+    /* Top Section */
+    #top-section {
+        width: 300px;
+    }
+
+    /* Bottom Section */
+    #bottom-section {
+        grid-template: "a b"
+                        "c d";
+    } 
+}
+
+/*Small Screen*/
+@media only screen and (max-width: 700px){
+    /* Top Section*/
+    #top-section {
+        width: 300px;
+    }
+
+    /* Bottom Section */
+    #bottom-section {
+        /*background-color: blue;*/
+        grid-template: "a"
+                        "b"
+                        "c";
+    }
+}
